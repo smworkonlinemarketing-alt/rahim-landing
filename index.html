@@ -6,7 +6,80 @@
 
     <title>Rahim Community</title>
 
-    <meta name="description" content="গুরুত্বপূর্ণ আপডেট, তথ্য ও কনটেন্ট পেতে আমাদের Telegram community-তে যুক্ত হন।">
+    <meta name="description" content="গুরুত্বপূর্ণ আপডেট, তথ্য ও কনটেন্ট পেতে আমাদের Telegram community-তে যুক্ত হন.">
+
+
+    <!-- =========================
+         META PIXEL
+         ========================= -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;
+    n.push=n;
+    n.loaded=!0;
+    n.version='2.0';
+    n.queue=[];
+    t=b.createElement(e);
+    t.async=!0;
+    t.src=v;
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}
+    (window, document, 'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    /* Your Meta Pixel */
+    fbq('init', '939346592097569');
+
+    /* Page View */
+    fbq('track', 'PageView');
+
+
+    /* =========================
+       TELEGRAM CLICK + SUBSCRIBE
+       ========================= */
+
+    function trackTelegramClick(buttonLocation) {
+
+        if (typeof fbq === 'function') {
+
+            /* Telegram Click Event */
+            fbq(
+                'trackCustom',
+                'TelegramClick',
+                {
+                    button_location: buttonLocation
+                }
+            );
+
+            /* Subscribe Event */
+            fbq(
+                'track',
+                'Subscribe',
+                {
+                    button_location: buttonLocation
+                }
+            );
+
+        }
+
+    }
+    </script>
+
+
+    <!-- Meta Pixel noscript -->
+    <noscript>
+        <img
+            height="1"
+            width="1"
+            style="display:none"
+            src="https://www.facebook.com/tr?id=939346592097569&ev=PageView&noscript=1"
+        />
+    </noscript>
+
+    <!-- End Meta Pixel Code -->
+
 
     <style>
         * {
@@ -132,21 +205,26 @@
     </style>
 </head>
 
+
 <body>
 
-    <!-- Header -->
+    <!-- =========================
+         HEADER
+         ========================= -->
+
     <header class="navbar">
 
         <div class="logo">
             Rahim Community
         </div>
 
-        <!-- Telegram Link -->
+        <!-- Telegram Button -->
         <a
             class="top-button"
             href="https://t.me/+zIwyiSqzD4I3MzZl"
             target="_blank"
             rel="noopener noreferrer"
+            onclick="trackTelegramClick('header')"
         >
             Join Telegram
         </a>
@@ -154,7 +232,10 @@
     </header>
 
 
-    <!-- Main Landing Page -->
+    <!-- =========================
+         MAIN LANDING PAGE
+         ========================= -->
+
     <main>
 
         <section class="hero">
@@ -170,12 +251,14 @@
                 সরাসরি পেতে শুরু করুন।
             </p>
 
-            <!-- Main CTA -->
+
+            <!-- Main Telegram Button -->
             <a
                 class="cta-button"
                 href="https://t.me/+zIwyiSqzD4I3MzZl"
                 target="_blank"
                 rel="noopener noreferrer"
+                onclick="trackTelegramClick('hero')"
             >
                 🚀 Telegram-এ Join করুন
             </a>
@@ -184,6 +267,10 @@
 
     </main>
 
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
 
     <footer class="footer">
         © 2026 Rahim Community
